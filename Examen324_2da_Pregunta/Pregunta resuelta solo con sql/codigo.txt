@@ -1,0 +1,19 @@
+Cantidad de aprobados por departamento, con sql
+segun la siquiente pregunta:
+2.    Con la Base de datos anterior, adicione una tabla de notas por materia y cuente la cantidad de aprobados por departamento de manera que solo obtenga una sola fila de resultados (con codigo PHP, con codigo SQL)
+En este caso se obtiene 2 filas de resultados, uno seria, el numero de departamento y el otro
+la cantidad de aprobados por departamento
+
+select
+max(case when i.lugarResidencia=1  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=1) else "" end)  CHUQUISACA,
+max(case when i.lugarResidencia=2  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=2) else "" end ) LAPAZ,
+max(case when i.lugarResidencia=3  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=3) else "" end ) COCHABAMBA,
+max(case when i.lugarResidencia=4  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=4) else "" end ) ORURO,
+max(case when i.lugarResidencia=5  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=5) else "" end ) POTOSI,
+max(case when i.lugarResidencia=6  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=6) else "" end ) TARIJA,
+max(case when i.lugarResidencia=7  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=7) else "" end ) STACRUZ,
+max(case when i.lugarResidencia=8  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=8) else "" end ) BENI,
+max(case when i.lugarResidencia=9  then (select COUNT(*) from notasxmateria nm, identificador i where nm.ci=i.ci and nm.nota>50 and i.lugarResidencia=9) else "" end ) PANDO
+from identificador i
+
+Tambien le pase la base de datos licenciado por si lo quiere probar. esta en una carpeta
